@@ -1,15 +1,16 @@
-import {GET, Path, PathParam} from 'typescript-rest';
-import {Inject} from 'typescript-ioc';
-import {HelloWorldApi} from '../services';
-import {LoggerApi} from '../logger';
+import { GET, Path, PathParam } from 'typescript-rest';
+import { Inject } from 'typescript-ioc';
+import { HelloWorldApi } from '../services';
+import { LoggerApi } from '../logger';
 
 @Path('/hello')
 export class HelloWorldController {
 
   @Inject
-  service: HelloWorldApi;
+  service!: HelloWorldApi;
+
   @Inject
-  _baseLogger: LoggerApi;
+  _baseLogger!: LoggerApi;
 
   get logger() {
     return this._baseLogger.child('HelloWorldController');

@@ -1,5 +1,5 @@
 {
-  "name": "template-node-typescript",
+  "name": "my-template-node-typescript",
   "version": "1.0.0",
   "org": "my-org",
   "description": "Code pattern for starting a typescript-based microservice",
@@ -13,6 +13,9 @@
   "pact": {
     "providerBaseUrl": "",
     "pactBrokerUrl": ""
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   },
   "scripts": {
     "clean": "rimraf dist",
@@ -38,6 +41,7 @@
     "express-pino-logger": "^6.0.0",
     "jaeger-client": "^3.18.1",
     "opentracing": "^0.14.5",
+    "@prisma/client": "3.10.0",
     "pino": "^6.13.2",
     "rxjs": "^7.3.0",
     "superagent": "^6.1.0",
@@ -68,6 +72,7 @@
     "jest": "^27.1.1",
     "jest-plugin-context": "^2.9.0",
     "jest-sonar-reporter": "^2.0.0",
+    "prisma": "^3.10.0",
     "pino-pretty": "^7.0.0",
     "rimraf": "^3.0.2",
     "sonarqube-scanner": "^2.8.1",
