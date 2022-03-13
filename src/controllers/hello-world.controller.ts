@@ -1,4 +1,4 @@
-import { GET, Path, PathParam } from 'typescript-rest';
+import { Errors, GET, Path, PathParam } from 'typescript-rest';
 import { Inject } from 'typescript-ioc';
 import { HelloWorldApi } from '../services';
 import { LoggerApi } from '../logger';
@@ -7,10 +7,10 @@ import { LoggerApi } from '../logger';
 export class HelloWorldController {
 
   @Inject
-  service!: HelloWorldApi;
+  service: HelloWorldApi;
 
   @Inject
-  _baseLogger!: LoggerApi;
+  _baseLogger: LoggerApi;
 
   get logger() {
     return this._baseLogger.child('HelloWorldController');
@@ -26,6 +26,14 @@ export class HelloWorldController {
   @GET
   async sayHello(@PathParam('name') name: string): Promise<string> {
     this.logger.info(`Saying hello to ${name}`);
-    return this.service.greeting(name);
+    return this.service.greeting(name.toString());
+  }
+  
+  @Path('number/:value')
+  @GET
+  async sayValue(@PathParam('value') value: number): Promise<string> {
+    if (isNaN(value)) throw new Errors.BadRequestError('value is not a number');
+    this.logger.info(`Saying hello to ${value}`);
+    return this.service.greeting(value.toString());
   }
 }
