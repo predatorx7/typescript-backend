@@ -1,7 +1,7 @@
 import { GET, Path } from 'typescript-rest';
 import { Inject } from 'typescript-ioc';
-import { LoggerApi } from '../logger';
-import { HealthApi } from '../services';
+import { LoggerApi } from '../../logger';
+import { HealthApi } from '../../services';
 
 @Path('/health')
 export class HealthController {
@@ -17,7 +17,6 @@ export class HealthController {
 
   @GET
   async healthCheck(): Promise<{ status: string; }> {
-    // return { status: 'DOWN' };
     return this.service.health();
   }
 }

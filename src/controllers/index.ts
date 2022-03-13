@@ -1,3 +1,3 @@
-export * from './hello-world.controller';
-export * from './health.controller';
+export * from './hello/hello-world.controller';
+export * from './health/health.controller';
 export * from './ping.controller';
