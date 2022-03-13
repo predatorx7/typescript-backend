@@ -3,7 +3,6 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist",
-    "strict": true,
     "noImplicitAny": false,
     "sourceMap": false,
     "declaration": false,
