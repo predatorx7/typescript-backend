@@ -1,5 +1,5 @@
 {
-  "name": "node-typescript-service-template",
+  "name": "node-typescript-template",
   "version": "1.0.0",
   "org": "my-org",
   "description": "Code pattern for starting a typescript-based microservice",

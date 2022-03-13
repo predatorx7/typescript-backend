@@ -1,4 +1,4 @@
-# node-typescript-service-template
+# node-typescript-template
 
 ### For more information
 
