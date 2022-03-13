@@ -5,6 +5,7 @@ import {LoggerApi} from './logger.api';
 import {getNamespace} from 'cls-hooked';
 import {TraceConstants} from '../util/opentracing/trace-constants';
 
+// A logger service that uses pino for logging
 // tslint:disable
 class ChildLogger extends LoggerApi {
   constructor(private logger: pino.Logger) {

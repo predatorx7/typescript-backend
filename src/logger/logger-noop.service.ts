@@ -1,15 +1,17 @@
-import {LoggerApi} from './logger.api';
+import { LoggerApi } from './logger.api';
 
+// A logger service that does no-operation
+// Used in tests to remove logs
 // tslint:disable
 export class NoopLoggerService extends LoggerApi {
 
-  log(message: string, context?: object): void {}
-  info(message: string, context?: object): void {}
-  debug(message: string, context?: object): void {}
-  fatal(message: string, context?: object): void {}
-  warn(message: string, context?: object): void {}
-  error(message: string, context?: object): void {}
-  trace(message: string, context?: object): void {}
+  log(message: string, context?: object): void { }
+  info(message: string, context?: object): void { }
+  debug(message: string, context?: object): void { }
+  fatal(message: string, context?: object): void { }
+  warn(message: string, context?: object): void { }
+  error(message: string, context?: object): void { }
+  trace(message: string, context?: object): void { }
 
   child(childName: string): LoggerApi {
     return this;

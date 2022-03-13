@@ -1,6 +1,6 @@
 import { HealthApi } from './health.api';
-import { Inject } from 'typescript-ioc';
-import { LoggerApi } from '../logger';
+import { Inject, Scope } from 'typescript-ioc';
+import { LoggerApi } from '../../logger';
 
 export class HealthService implements HealthApi {
   logger: LoggerApi;
@@ -19,3 +19,9 @@ export class HealthService implements HealthApi {
     };
   }
 }
+
+export const config = {
+  bind: HealthApi,
+  to: HealthService,
+  scope: Scope.Singleton,
+};

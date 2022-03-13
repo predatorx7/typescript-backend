@@ -1,6 +1,6 @@
 import {HelloWorldApi} from './hello-world.api';
-import {Inject} from 'typescript-ioc';
-import {LoggerApi} from '../logger';
+import {Inject, Scope} from 'typescript-ioc';
+import {LoggerApi} from '../../logger';
 
 export class HelloWorldService implements HelloWorldApi {
   logger: LoggerApi;
@@ -17,3 +17,9 @@ export class HelloWorldService implements HelloWorldApi {
     return `Hello, ${name}!`;
   }
 }
+
+export const config = {
+  bind: HelloWorldApi,
+  to: HelloWorldService,
+  scope: Scope.Singleton
+};
