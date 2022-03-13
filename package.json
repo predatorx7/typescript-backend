@@ -1,5 +1,5 @@
 {
-  "name": "my-template-node-typescript",
+  "name": "node-typescript-service-template",
   "version": "1.0.0",
   "org": "my-org",
   "description": "Code pattern for starting a typescript-based microservice",
@@ -33,8 +33,6 @@
     "pact:publish": "ts-node test/pact-publish",
     "sonarqube:scan": "npm run test && ts-node test/sonarqube-scan"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "cls-hooked": "^4.2.2",
     "cors": "^2.8.5",
@@ -85,5 +83,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/ibm-garage-cloud/template-node-typescript.git"
-  }
+  },
+  "author": "mushaheed.syed@enpointe.io",
+  "license": "Apache"
 }
